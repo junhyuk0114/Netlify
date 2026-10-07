@@ -1,4 +1,5 @@
 # netlify-portfolio-starter
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4c9a25a6-07da-452f-8777-dc1b64c73b04/deploy-status)](https://app.netlify.com/projects/singular-sfogliatella-314b6a/deploys)
 
 GitHub → Netlify 연동 실습용 정적 포트폴리오 사이트입니다.
 
