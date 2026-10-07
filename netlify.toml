@@ -1,3 +1,37 @@
 [build]
-  publish = "/"
+  publish = "."
   command = ""
+
+# 보안 헤더 + CSP (외부 리소스는 jsDelivr CDN만 허용)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'"
+
+# 정적 리소스 캐싱
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# 기본 *.netlify.app 주소 → 커스텀 도메인으로 통일하려면 아래 주석을 해제하고 도메인을 바꾸세요.
+# [[redirects]]
+#   from = "https://YOUR-SITE.netlify.app/*"
+#   to = "https://YOUR-DOMAIN.com/:splat"
+#   status = 301
+#   force = true

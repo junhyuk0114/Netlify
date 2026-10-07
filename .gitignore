@@ -1,0 +1,12 @@
+# OS / 편집기
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Netlify CLI 로컬 설정
+.netlify/
+
+# 의존성 / 로그
+node_modules/
+*.log

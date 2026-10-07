@@ -1,37 +1,308 @@
-/* 기본 폰트 설정 및 스무스 스크롤 효과 */
+/* ===== 디자인 토큰 ===== */
+:root {
+    --accent: #4f46e5;
+    --accent-2: #06b6d4;
+    --surface-alt: #f6f7fb;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --bs-primary: var(--accent);
+    --bs-primary-rgb: 79, 70, 229;
+    --bs-link-color: var(--accent);
+    --bs-link-color-rgb: 79, 70, 229;
+}
+
+[data-bs-theme="dark"] {
+    --accent: #818cf8;
+    --surface-alt: #161a23;
+    --card-bg: #1d2230;
+    --nav-bg: rgba(17, 20, 28, 0.85);
+    --bs-body-bg: #11141c;
+    --bs-primary-rgb: 129, 140, 248;
+    --bs-link-color: var(--accent);
+    --bs-link-color-rgb: 129, 140, 248;
+}
+
+/* ===== 기본 ===== */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 72px;
 }
 
 body {
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    color: #333333;
-    background-color: #ffffff;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    word-break: keep-all;
 }
 
-/* 네비게이션바 스타일 */
+.btn-primary {
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-bg: #4338ca;
+    --bs-btn-hover-border-color: #4338ca;
+    --bs-btn-active-bg: #3730a3;
+    --bs-btn-color: #fff;
+}
+
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2000;
+    padding: 8px 12px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* ===== 네비게이션 ===== */
 .navbar {
-    backdrop-filter: blur(10px);
-    background-color: rgba(33, 37, 41, 0.95) !important;
+    backdrop-filter: saturate(180%) blur(12px);
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--bs-border-color-translucent);
 }
 
-/* 프로젝트 카드 호버 효과 추가 */
-#projects .card {
+.brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.navbar .nav-link.active {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+/* ===== 히어로 ===== */
+.hero {
+    padding: 96px 0;
+    background:
+        radial-gradient(600px 300px at 85% 10%, rgba(6, 182, 212, 0.12), transparent),
+        radial-gradient(600px 300px at 10% 90%, rgba(79, 70, 229, 0.12), transparent);
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.profile-ring {
+    display: inline-block;
+    padding: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.profile-ring img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 6px solid var(--bs-body-bg);
+}
+
+/* ===== 섹션 공통 ===== */
+.section-alt {
+    background-color: var(--surface-alt);
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* ===== 타임라인 ===== */
+.timeline {
+    list-style: none;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: 28px;
+    border-left: 2px solid var(--bs-border-color);
+}
+
+.timeline li {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.2);
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+/* ===== 스킬 ===== */
+.skill-card {
+    padding: 28px 16px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--bs-border-color-translucent);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card i {
+    font-size: 2.6rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== 프로젝트 ===== */
+.filter-btn {
+    border-radius: 999px;
+    padding: 6px 16px;
+}
+
+.project-card {
+    border: 1px solid var(--bs-border-color-translucent);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card-bg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
-#projects .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* 기술 블록 디자인 보정 */
-#skills .card {
-    background-color: #f8f9fa;
-    transition: background-color 0.2s ease;
+.project-thumb {
+    height: 180px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
 }
 
-#skills .card:hover {
-    background-color: #e9ecef;
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card .badge {
+    background: rgba(var(--bs-primary-rgb), 0.1);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.project-card .card-footer {
+    background: transparent;
+    border: 0;
+}
+
+/* ===== 폼 / 푸터 / 기타 ===== */
+#contactForm {
+    background: var(--card-bg);
+    border-radius: 16px;
+}
+
+footer {
+    border-top: 1px solid var(--bs-border-color-translucent);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1030;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 스크롤 등장 애니메이션 (JS가 .js 클래스를 붙였을 때만 숨김 → JS 미동작 시에도 내용 보임) */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .skill-card, .project-card { transition: none; }
+}
+
+/* ===== 인쇄 = 이력서 PDF ===== */
+@media print {
+    @page { margin: 14mm; }
+    .navbar, #contact, footer, .back-to-top, #projectFilters, .hero .btn, .project-card .card-footer, .skip-link { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    .hero, .section-alt { background: none !important; padding: 0 0 16px !important; }
+    section { padding: 8px 0 !important; break-inside: avoid; }
+    .js .reveal { opacity: 1 !important; transform: none !important; }
+    .profile-ring img { width: 120px; height: 120px; }
+    .project-thumb { display: none !important; }
+    .project-card, .skill-card { box-shadow: none !important; border: 1px solid #ccc !important; break-inside: avoid; }
+    .section-title { margin-bottom: 1rem; font-size: 1.3rem; }
+    .text-gradient { color: #000 !important; background: none !important; }
 }

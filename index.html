@@ -1,24 +1,60 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프론트엔드 개발자 | 포트폴리오</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>홍길동 | 프론트엔드 개발자 포트폴리오</title>
+
+    <!-- SEO / 공유 미리보기 -->
+    <meta name="description" content="사용자 경험을 중요하게 생각하는 프론트엔드 개발자 홍길동의 웹 이력서 및 포트폴리오입니다.">
+    <meta name="author" content="홍길동">
+    <meta name="theme-color" content="#4f46e5">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="홍길동 | 프론트엔드 개발자 포트폴리오">
+    <meta property="og:description" content="HTML, CSS, JavaScript 기반 프로젝트와 경력을 소개합니다.">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:url" content="https://singular-sfogliatella-314b6a.netlify.app/">
+    <meta property="og:image" content="https://singular-sfogliatella-314b6a.netlify.app/assets/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://singular-sfogliatella-314b6a.netlify.app/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <script src="theme-init.js"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "홍길동",
+        "jobTitle": "Frontend Developer",
+        "sameAs": ["https://github.com/junhyuk0114"]
+    }
+    </script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80" tabindex="0">
+
+    <a class="visually-hidden-focusable skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="주요 메뉴">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">FE Developer</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand fw-bold" href="#top"><span class="brand-mark">FE</span> Developer</a>
+            <div class="d-flex align-items-center gap-2 order-lg-last">
+                <button id="themeToggle" class="btn btn-icon" type="button" aria-label="다크 모드 전환">
+                    <i class="bi bi-moon-stars-fill"></i>
+                </button>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="메뉴 열기">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -27,203 +63,185 @@
         </div>
     </nav>
 
-    <header id="about" class="bg-light py-5 border-bottom">
-        <div class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-md-4 text-center">
-                    <img src="assets/profile.svg" alt="프로필 이미지" class="rounded-circle img-fluid shadow-sm" style="width: 250px; height: 250px; object-fit: cover; background: #e9ecef;">
-                </div>
-                <div class="col-md-8 text-center text-md-start">
-                    <h1 class="display-4 fw-bold text-dark">안녕하세요, 홍길동입니다.</h1>
-                    <p class="lead text-muted mt-3">
-                        사용자 경험을 중요하게 생각하고, 깔끔한 코드를 지향하는 프론트엔드 개발자입니다. 
-                        HTML, CSS, JavaScript를 기반으로 다채로운 정적/동적 웹사이트를 구현합니다.
-                    </p>
-                    <div class="mt-4">
-                        <a href="assets/resume.pdf" class="btn btn-primary btn-lg me-2" download><i class="bi bi-file-earmark-pdf"></i> 이력서 다운로드</a>
-                        <a href="https://github.com/본인아이디" target="_blank" class="btn btn-outline-dark btn-lg"><i class="bi bi-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <main id="main">
+        <span id="top"></span>
 
-    <section id="skills" class="py-5">
-        <div class="container py-4">
-            <h2 class="text-center fw-bold mb-5">Technical Skills</h2>
-            <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm py-4">
-                        <div class="card-body">
-                            <i class="bi bi-filetype-html display-4 text-danger mb-3"></i>
-                            <h5 class="card-title fw-bold">HTML5</h5>
-                            <p class="card-text text-muted small">웹 표준 및 시맨틱 마크업</p>
+        <header id="about" class="hero">
+            <div class="container">
+                <div class="row align-items-center g-4 g-md-5">
+                    <div class="col-md-4 text-center reveal">
+                        <div class="profile-ring">
+                            <img src="assets/profile.svg" alt="홍길동 프로필 이미지" width="240" height="240" class="rounded-circle">
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm py-4">
-                        <div class="card-body">
-                            <i class="bi bi-filetype-css display-4 text-primary mb-3"></i>
-                            <h5 class="card-title fw-bold">CSS3</h5>
-                            <p class="card-text text-muted small">반응형 레이아웃 및 Flex/Grid</p>
+                    <div class="col-md-8 text-center text-md-start reveal">
+                        <span class="eyebrow">Frontend Developer</span>
+                        <h1 class="display-5 fw-bold mt-2">안녕하세요,<br><span class="text-gradient">홍길동</span>입니다.</h1>
+                        <p class="lead text-body-secondary mt-3">
+                            사용자 경험을 중요하게 생각하고, 깔끔한 코드를 지향하는 프론트엔드 개발자입니다.
+                            HTML, CSS, JavaScript를 기반으로 다채로운 정적/동적 웹사이트를 구현합니다.
+                        </p>
+                        <ul class="list-inline text-body-secondary small mb-0">
+                            <li class="list-inline-item me-3"><i class="bi bi-geo-alt"></i> Seoul, Korea</li>
+                            <li class="list-inline-item"><i class="bi bi-envelope"></i> <a href="#contact" class="link-secondary">연락하기</a></li>
+                        </ul>
+                        <div class="mt-4 d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                            <a href="assets/resume.pdf" class="btn btn-primary btn-lg" download><i class="bi bi-file-earmark-pdf"></i> 이력서 다운로드</a>
+                            <button id="printResume" type="button" class="btn btn-outline-secondary btn-lg"><i class="bi bi-printer"></i> 웹 이력서 인쇄</button>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm py-4">
-                        <div class="card-body">
-                            <i class="bi bi-filetype-js display-4 text-warning mb-3"></i>
-                            <h5 class="card-title fw-bold">JavaScript</h5>
-                            <p class="card-text text-muted small">DOM 조작 및 비동기 데이터 처리</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm py-4">
-                        <div class="card-body">
-                            <i class="bi bi-bootstrap display-4 text-purple mb-3" style="color: #7952b3;"></i>
-                            <h5 class="card-title fw-bold">Bootstrap</h5>
-                            <p class="card-text text-muted small">컴포넌트 활용 신속한 UI 구현</p>
+                        <!-- 소셜 링크: 본인 정보로 수정 (없으면 # 로 두기) -->
+                        <div class="social-links mt-3 d-flex gap-2 justify-content-center justify-content-md-start">
+                            <a href="https://github.com/junhyuk0114" target="_blank" rel="noopener" class="btn btn-icon" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="mailto:you@example.com" class="btn btn-icon" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                            <a href="#" target="_blank" rel="noopener" class="btn btn-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="projects" class="py-5 bg-light">
-        <div class="container py-4">
-            <h2 class="text-center fw-bold mb-5">Projects</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <span>Project 1 Image (300x200)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">포트폴리오 웹사이트</h5>
-                            <p class="card-text text-muted">Bootstrap을 활용하여 제작한 개인 웹 이력서 및 포트폴리오 사이트입니다. Netlify를 통해 배포되었습니다.</p>
-                            <span class="badge bg-secondary mb-3">HTML/CSS</span>
-                            <span class="badge bg-secondary mb-3">Bootstrap</span>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between pb-3">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Demo</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark">Github</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <span>Project 2 Image (300x200)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Clone Coding 프로젝트</h5>
-                            <p class="card-text text-muted">유명 서비스의 메인 페이지를 클론 코딩하여 바닐라 자바스크립트의 기초 및 반응형 레이아웃을 다졌습니다.</p>
-                            <span class="badge bg-secondary mb-3">JavaScript</span>
-                            <span class="badge bg-secondary mb-3">CSS Grid</span>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between pb-3">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Demo</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark">Github</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <span>Project 3 Image (300x200)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">To-Do 웹 애플리케이션</h5>
-                            <p class="card-text text-muted">Local Storage를 활용하여 웹 브라우저가 닫혀도 데이터가 유지되는 할 일 관리 앱을 구현했습니다.</p>
-                            <span class="badge bg-secondary mb-3">JavaScript</span>
-                            <span class="badge bg-secondary mb-3">Local Storage</span>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between pb-3">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Demo</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark">Github</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <span>Project 4 Image (300x200)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">날씨 정보 대시보드</h5>
-                            <p class="card-text text-muted">공공 Open API를 연동하여 사용자의 현재 위치 기준 실시간 날씨와 예보 데이터를 보여주는 대시보드입니다.</p>
-                            <span class="badge bg-secondary mb-3">JavaScript</span>
-                            <span class="badge bg-secondary mb-3">Fetch API</span>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between pb-3">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Demo</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark">Github</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <span>Project 5 Image (300x200)</span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Interactive Web UI</h5>
-                            <p class="card-text text-muted">CSS Animation과 자바스크립트 스크롤 이벤트를 활용해 동적이고 화려한 인터랙션 인터페이스를 구현했습니다.</p>
-                            <span class="badge bg-secondary mb-3">CSS Animation</span>
-                            <span class="badge bg-secondary mb-3">JS Event</span>
-                        </div>
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between pb-3">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Demo</a>
-                            <a href="#" class="btn btn-sm btn-outline-dark">Github</a>
-                        </div>
-                    </div>
-                </div>
-
+        <section id="experience" class="py-5">
+            <div class="container py-4">
+                <h2 class="section-title reveal">Experience &amp; Education</h2>
+                <ol class="timeline reveal">
+                    <li>
+                        <span class="timeline-date">2026.08 – 현재</span>
+                        <h3 class="h5 fw-bold mb-1">AI / 웹 개발 교육 과정</h3>
+                        <p class="text-body-secondary mb-0">데이터 분석, 딥러닝, 객체 인식, Kubernetes, JavaScript 실습 프로젝트 수행</p>
+                    </li>
+                    <li>
+                        <span class="timeline-date">YYYY.MM – YYYY.MM</span>
+                        <h3 class="h5 fw-bold mb-1">회사명 / 직무</h3>
+                        <p class="text-body-secondary mb-0">담당 업무와 성과를 수치와 함께 적어주세요. (예: 페이지 로딩 속도 40% 개선)</p>
+                    </li>
+                    <li>
+                        <span class="timeline-date">YYYY.MM</span>
+                        <h3 class="h5 fw-bold mb-1">학교명 / 전공</h3>
+                        <p class="text-body-secondary mb-0">학위, 주요 수강 과목, 자격증 등</p>
+                    </li>
+                </ol>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="py-5">
-        <div class="container py-4">
-            <h2 class="text-center fw-bold mb-5">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <form name="portfolio-contact" method="POST" data-netlify="true" class="card p-4 shadow-sm border-0">
-                        <div class="mb-3">
-                            <label for="name" class="form-label fw-semibold">이름</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="홍길동" required>
+        <section id="skills" class="py-5 section-alt">
+            <div class="container py-4">
+                <h2 class="section-title reveal">Technical Skills</h2>
+                <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-filetype-html" style="color:#e34f26"></i>
+                            <h3 class="h6 fw-bold mt-3">HTML5</h3>
+                            <p class="text-body-secondary small mb-0">웹 표준 및 시맨틱 마크업</p>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-semibold">이메일 주소</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-filetype-css" style="color:#1572b6"></i>
+                            <h3 class="h6 fw-bold mt-3">CSS3</h3>
+                            <p class="text-body-secondary small mb-0">반응형 레이아웃 및 Flex/Grid</p>
                         </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label fw-semibold">메시지</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="프로젝트 제안이나 연락처를 남겨주세요." required></textarea>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-filetype-js" style="color:#d4a90b"></i>
+                            <h3 class="h6 fw-bold mt-3">JavaScript</h3>
+                            <p class="text-body-secondary small mb-0">DOM 조작 및 비동기 데이터 처리</p>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">보내기</button>
-                    </form>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-bootstrap" style="color:#7952b3"></i>
+                            <h3 class="h6 fw-bold mt-3">Bootstrap</h3>
+                            <p class="text-body-secondary small mb-0">컴포넌트 활용 신속한 UI 구현</p>
+                        </div>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-filetype-py" style="color:#3776ab"></i>
+                            <h3 class="h6 fw-bold mt-3">Python</h3>
+                            <p class="text-body-secondary small mb-0">데이터 분석 및 모델 서빙</p>
+                        </div>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-cpu" style="color:#ee4c2c"></i>
+                            <h3 class="h6 fw-bold mt-3">Deep Learning</h3>
+                            <p class="text-body-secondary small mb-0">객체 인식 모델 학습</p>
+                        </div>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-boxes" style="color:#326ce5"></i>
+                            <h3 class="h6 fw-bold mt-3">Kubernetes</h3>
+                            <p class="text-body-secondary small mb-0">컨테이너 배포 및 운영</p>
+                        </div>
+                    </div>
+                    <div class="col reveal">
+                        <div class="skill-card h-100">
+                            <i class="bi bi-git" style="color:#f05032"></i>
+                            <h3 class="h6 fw-bold mt-3">Git / Netlify</h3>
+                            <p class="text-body-secondary small mb-0">버전 관리 및 CI/CD 배포</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-dark text-white text-center py-4">
+        <section id="projects" class="py-5">
+            <div class="container py-4">
+                <h2 class="section-title reveal">Projects</h2>
+                <div id="projectFilters" class="d-flex flex-wrap justify-content-center gap-2 mb-4" role="group" aria-label="프로젝트 분류 필터"></div>
+                <div id="projectList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <noscript><p class="text-center">프로젝트 목록을 보려면 JavaScript를 활성화해 주세요.</p></noscript>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5 section-alt">
+            <div class="container py-4">
+                <h2 class="section-title reveal">Contact Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 reveal">
+                        <form id="contactForm" name="portfolio-contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field" class="card p-4 border-0 shadow-sm">
+                            <input type="hidden" name="form-name" value="portfolio-contact">
+                            <p class="d-none"><label>사람이면 비워두세요: <input name="bot-field"></label></p>
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-semibold">이름</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="홍길동" autocomplete="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">이메일 주소</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label fw-semibold">메시지</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="프로젝트 제안이나 연락처를 남겨주세요." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
+                                <span class="btn-label">보내기</span>
+                                <span class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+                            </button>
+                            <div id="formStatus" class="mt-3 small" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center">
         <div class="container">
-            <p class="mb-0">&copy; 2026 FE Developer Portfolio. All rights reserved.</p>
-            <small class="text-muted">Powered by Bootstrap & Netlify</small>
+            <p class="mb-1">&copy; <span id="year">2026</span> 홍길동. All rights reserved.</p>
+            <small class="text-body-secondary">Built with Bootstrap · Deployed on Netlify</small>
         </div>
     </footer>
 
+    <button id="backToTop" class="btn btn-primary back-to-top" type="button" aria-label="맨 위로">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
